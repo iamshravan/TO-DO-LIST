@@ -19,32 +19,19 @@ addForm.addEventListener("submit", (e) => {
   }
 });
 
-
-
-
-
-// Deleting todos - we are using event delegation
-//we already had reference for ul
 list.addEventListener("click", (e) => {
-  //  if (e.target.tagName === "I")
+  
   if (e.target.classList.contains("delete")) {
     e.target.parentElement.remove();
   }
 });
 
-
-
-
-//Filter and Searching - keyup event
-//cont search = document.querySelector('.search input');
-const search = document.querySelector(".input-field"); //reference to search input
+const search = document.querySelector(".input-field"); 
 
 const filterTodos = (term) => {
     Array.from(list.children)
       .filter((todo) => !todo.textContent.toLowerCase().includes(term))
       .forEach((todo) => todo.classList.add("filtered"));
-    
-    
     
     Array.from(list.children)
       .filter((todo) => todo.textContent.toLowerCase().includes(term))
